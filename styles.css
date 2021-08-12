@@ -1,0 +1,1106 @@
+/****************************************MATCHDAY*******************************************/
+/***************************************INDEX PAGE******************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+body {
+  font-family: "Sora", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+a:hover {
+  text-decoration: none;
+  color: darkorange;
+}
+/****************************************NAVBAR*********************************************/
+
+/*****************************************MAIN-NAVBAR***************************************/
+.header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 105vh;
+  padding-top: 20px;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px 30px;
+  position: absolute;
+  transform: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.904);
+  z-index: 998;
+  top: 0px;
+  width: 100%;
+}
+.nav ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav ul li {
+  display: flex;
+}
+nav ul li a {
+  font-family: "Sora", sans-serif;
+  font-size: 1.1em;
+  color: #ffe600;
+  padding: 0.25rem 0;
+  margin: 0 1.8rem;
+  text-transform: uppercase;
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color: darkorange;
+}
+.nav ul li.logomain a {
+  margin: 0 4rem;
+}
+.black {
+  display: none;
+}
+.nav-icon {
+  position: absolute;
+  top: 27px;
+  right: 30px;
+  padding: 5px;
+  padding-top: 10px;
+  width: 40px;
+  z-index: 1;
+  cursor: pointer;
+}
+.nav-icon span {
+  background: #ffe600;
+  width: 30px;
+  height: 1px;
+  display: block;
+  transition: 300ms linear all;
+}
+.nav-icon span:nth-child(1),
+.nav-icon span:nth-child(3) {
+  width: 20px;
+  margin: 0 auto;
+}
+.nav-icon span:nth-child(2) {
+  margin: 5px 0;
+  width: 32px;
+}
+.nav-icon:hover span:nth-child(1),
+.nav-icon:hover span:nth-child(3) {
+  width: 30px;
+}
+
+/**************************************FULL-NAVBAR******************************************/
+.full-nav {
+  background: #ffe600;
+  color: rgba(0, 0, 0, 0.904);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 3.75rem;
+  z-index: 999;
+  overflow-x: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 0.4s ease-in-out;
+}
+.full-nav.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.4s ease-in-out;
+  z-index: 999;
+}
+.full-nav .logo {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  color: rgba(0, 0, 0, 0.904);
+}
+.nav2 {
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+.nav2 ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 700px;
+  border-radius: 30px;
+}
+.nav2 ul li {
+  display: flex;
+  flex: 50%;
+  background-color: rgba(0, 0, 0, 0.904);
+  padding: 1rem;
+  border-bottom: 30px solid #ffe600;
+  border-right: 30px solid #ffe600;
+  transition: all 0.5s;
+}
+.nav2 ul li a {
+  font-family: "Sora", sans-serif;
+  font-size: 1.4em;
+  color: #ffe600;
+}
+.nav2 ul li a span {
+  color: #ffe600;
+}
+.nav2 ul li:hover {
+  background-color: #290001;
+}
+.nav2 ul li:hover a,
+.nav2 ul li:hover a span {
+  color: white;
+}
+.social-icons a img {
+  color: rgba(0, 0, 0, 0.904);
+  width: 90px;
+  height: 100px;
+  line-height: 50px;
+  display: inherit;
+  text-align: center;
+  border-right: 60px;
+  transition: all ease 1s;
+  margin-top: 40px;
+}
+.social-icons a:hover i {
+  color: crimson;
+  margin-top: -10px;
+  border-color: crimson;
+}
+.social-icons a:hover {
+  transition: all 0.3s ease-in-out;
+  margin-top: -10px;
+  border-color: crimson;
+}
+ul.social-icons.list-inline {
+  text-align: center;
+  margin-top: 22px;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.corner-cir {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.904);
+  border-radius: 0 0 0 120px;
+  z-index: 999;
+}
+.nav-close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.nav-close span {
+  background-color: #ffe600;
+  width: 30px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: 14px;
+}
+.nav-close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.nav-close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.nav.sticky {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.904);
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.35);
+  animation-name: animationFade;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes animationFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+  }
+}
+.nav.sticky a {
+  color: #ffe600;
+}
+.nav.sticky .nav-ivon span {
+  background-color: #ffe600;
+}
+
+/*******************************************VIDEO*******************************************/
+#carouselExampleIndicators .carousel-item {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+}
+.carousel-caption {
+  position: absolute;
+  top: 38%;
+  text-transform: uppercase;
+}
+.carousel-caption h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.1rem 0.1rem 0.8rem black;
+  padding-bottom: 1rem;
+  color: #ffe600;
+  z-index: 999;
+  border: 1px solid rgba(17, 17, 17, 0.904);
+  border-radius: 30px;
+  background-color: rgba(17, 17, 17, 0.904);
+}
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0.1rem 0.1rem 0.5rem black;
+  border-radius: 30px;
+  padding-bottom: 1.6rem;
+  margin-bottom: 20px;
+  padding-top: 1.6rem;
+  color: rgba(0, 0, 0, 0.904);
+  z-index: 999;
+  border: 1px solid #ffe6009a;
+  background-color: #ffe6009a;
+}
+.myButton {
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background-color: #ffe600;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffe600;
+}
+.myButton:hover {
+  text-decoration: none;
+  color: #ffe600;
+  background: rgba(0, 0, 0, 0.904);
+  background-color: rgba(0, 0, 0, 0.904);
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+video {
+  top: 0;
+  width: 100%;
+  z-index: -999;
+}
+
+/******************************************MATCHES******************************************/
+#upcomingm .carousel-indicators {
+  position: static;
+  padding-top: 30px;
+}
+#upcomingm .carousel-indicators li {
+  background-color: rgba(0, 0, 0, 0.904);
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+}
+#upcomingm .carousel-control-prev-icon {
+  background-image: url(/IMAGES/left-arrow.svg);
+  padding: 25px;
+}
+#upcomingm .carousel-control-next-icon {
+  background-image: url(/IMAGES/right-arrow.svg);
+  padding: 25px;
+}
+#upcomingm .carousel-control-next,
+#upcomingm .carousel-control-prev {
+  width: auto;
+}
+#upcomingm .carousel-control-next {
+  right: -80px;
+}
+#upcomingm .carousel-control-prev {
+  left: -80px;
+}
+#upcomingm h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.904);
+}
+p.lead {
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.904);
+  padding-bottom: 20px;
+}
+h4.text-dark {
+  font-family: "Sora", sans-serif;
+  font-size: 21px;
+}
+p.text-secondary {
+  font-family: "Sora", sans-serif;
+  color: rgb(68, 68, 68);
+}
+#matches {
+  margin-top: 80px;
+}
+
+/*************************************UEFA AWARD WINNERS************************************/
+#winners h3 {
+  font-family: "Sora", sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 600;
+  color: #ffe600;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+.players-wrapper {
+  overflow: hidden;
+}
+.players-wrapper img {
+  transition: transform 3s ease;
+}
+.players-wrapper img:hover {
+  transform: scale(1.5);
+  scale: zoom-in;
+}
+.gap img {
+  width: 100%;
+  height: auto;
+}
+hr.new1 {
+  border: 1px solid #ffe600;
+}
+.top_announcement {
+  background-color: rgba(0, 0, 0, 0.904);
+  color: #ffe600;
+}
+/******************************************SHOPPING*****************************************/
+#shopping {
+  padding-top: 100px;
+}
+#shopping .container {
+  width: 100%;
+  height: 100vh;
+  background: url(/IMAGES/yellowbg21.jpg);
+  padding-top: 50px;
+}
+.box {
+  width: 350px;
+  height: 610px;
+  background: url(/IMAGES/blackbg21.jpg);
+  border-radius: 10px;
+  box-shadow: 2px 10px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 20px 10px;
+}
+.model {
+  height: 350px;
+  max-height: 100%;
+  max-width: 100%;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+.details p {
+  font-family: "Sora", sans-serif;
+  font-weight: bold;
+  color: #6a6a74;
+  text-align: center;
+  margin: 20px;
+}
+.jersey {
+  color: #32323e;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: "Sora", sans-serif;
+  font-size: 25px;
+  margin: 0;
+}
+.box:hover {
+  background-color: #17171d;
+  transform-style: preserve-3d;
+  transform: scale(1.02);
+  transition: all ease 0.3s;
+}
+.box:hover .jersey {
+  color: #ffe600;
+  transition: all ease 0.5s;
+}
+@media (max-width: 720px) {
+  .box {
+    width: 94%;
+    height: 500px;
+  }
+  .model {
+    height: 250px;
+  }
+  .details p {
+    font-size: 16px;
+    width: 250px;
+  }
+}
+hr.new2 {
+  border: 1px solid rgba(0, 0, 0, 0.904);
+}
+
+/******************************************SHOP NOW*****************************************/
+.shopnow {
+  background-image: url(/IMAGES/71295ba1340f014b6161913a4c7adaa9.jpg);
+  padding-top: 130px;
+  padding-bottom: 130px;
+  background-attachment: fixed;
+  opacity: 1;
+}
+.shopnow h2 {
+  font-family: "Sora", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.shopnow p {
+  font-family: "Sora", sans-serif;
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+.shopnow a {
+  font-family: "Sora", sans-serif;
+  color: white;
+  padding: 15px 30px;
+  background: transparent;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.5s ease-in;
+  border: 2px solid white;
+}
+.shopnow a:hover {
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.904);
+  color: #ffe600;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+/*******************************************BRANDS******************************************/
+#brands {
+  padding: 100px 0 0 0;
+  padding-left: 105px;
+  background: url(/IMAGES/blackbg21.jpg);
+  padding-bottom: 20px;
+  padding-right: 100px;
+}
+#brands-list {
+  padding: 45px 0 0 0;
+  padding-left: 80px;
+}
+.available {
+  padding: 0 10px;
+  max-width: 170px;
+  margin: 0 auto;
+  line-height: 100px;
+}
+.available img {
+  display: inline-block;
+  padding: 5px;
+}
+#brands h5 {
+  font-size: 20px;
+  font-family: "Sora", sans-serif;
+  color: #ffe600;
+}
+#brands h2 {
+  font-size: 34px;
+  font-family: "Sora", sans-serif;
+  color: #ffe600;
+}
+
+/****************************************FOOTER*********************************************/
+hr.new3 {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0%;
+}
+.contact {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-bottom: 60px;
+}
+#contact-right {
+  padding-left: 200px;
+}
+#contact-left {
+  position: absolute;
+  z-index: 99;
+  bottom: -59px;
+}
+#contact-right h2,
+h3 {
+  font-family: "Staatliches", sans-serif;
+  color: #ffe600;
+  font-size: 27px;
+  font-weight: 700;
+}
+form .form-control {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  border: 1px solid #ffe600;
+  font-size: 17px;
+  font-weight: 300;
+  padding: 8px;
+  margin-bottom: 20px;
+  color: #ffe600;
+}
+#txt:focus {
+  border: none;
+  border: 1px solid;
+  background-color: transparent;
+  border-color: #ffe600;
+  color: #ffe600;
+}
+#footer-bottom {
+  background-color: rgba(0, 0, 0, 0.01);
+  padding: 30px 0;
+  margin-top: 59px;
+}
+#send-btn a {
+  color: #ffe600;
+  background-color: black;
+}
+#send-btn a:hover {
+  color: black;
+  background-color: #ffe600;
+}
+#send-btn a {
+  border-width: 2px;
+  border-radius: 0;
+  padding: 10px 23px 10px 23px;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Staatliches", sans-serif;
+  color: #ffe600;
+  border-color: #ffe600;
+}
+#footer-copyrights p {
+  font-size: 30px;
+  font-family: "Sora", sans-serif;
+  margin: 0 0 0 50px;
+  text-transform: uppercase;
+  color: #ffe600;
+  letter-spacing: 25px;
+  font-family: "Secular One", sans-serif;
+}
+#footer-icons ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#footer-icons ul li {
+  display: inline-block;
+}
+#footer-icons a {
+  color: #ffe600;
+  width: 17px;
+  margin-right: 77px;
+  text-decoration: none;
+}
+.fa {
+  font-size: 30px;
+  margin-right: 40px;
+}
+
+/***************************************FOOTER NAVBAR***************************************/
+.footer-nav {
+  background-color: black;
+}
+.footer_menu {
+  padding: 50px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto 25px;
+  justify-content: space-between;
+  font-family: "Juventus Fans Bold";
+  list-style: none;
+}
+.title {
+  font-size: 20px;
+  padding-top: 30px;
+  margin-bottom: 10px;
+  color: #ffe600 !important;
+  padding-right: 200px;
+  list-style: none;
+}
+.footer_menu ul,
+li,
+a {
+  display: block;
+  margin-bottom: 6px;
+  color: #91872d;
+  list-style: none;
+}
+.footer_menu a {
+  color: #91872d;
+}
+.footer_menu ul li a:hover {
+  text-decoration: none;
+  color: #d4c00c;
+  list-style: none;
+}
+/*************************************COPYRIGHTS********************************************/
+#copyrights p {
+  color: #ffe600;
+  font-family: "Juventus Fans Bold";
+  margin-bottom: 0;
+  padding: 30px;
+  text-align: center;
+}
+hr.new4 {
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 0%;
+}
+
+/**********************************END OF THE INDEX PAGE************************************/
+
+/***************************************SHOPPING PAGE***************************************/
+.myslides ul {
+  list-style: none;
+}
+.myslides img {
+  max-width: 100%;
+  height: auto;
+}
+.myslides a {
+  text-decoration: none;
+}
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  background: url(/IMAGES/bg-main-yellow.png) 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 105vh;
+  overflow: hidden;
+}
+
+.slideshow-container .prev,
+.slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #ffe600;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.slideshow-container .next {
+  right: 0;
+  border-radius: 0 3px 3px 0;
+}
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.904);
+  text-decoration: none;
+}
+.myslides h2 {
+  font-size: 165px;
+  letter-spacing: 33px;
+  font-weight: 800;
+  line-height: 1;
+  position: absolute;
+  top: 185px;
+  left: 80px;
+  z-index: 10;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}
+.myslides h2 span {
+  display: block;
+  text-align: right;
+  font-size: 22px;
+  letter-spacing: 20px;
+  padding-right: 20px;
+}
+.myslides .p_img {
+  display: block;
+  width: auto;
+  height: 900px;
+  position: absolute;
+  z-index: 20;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: slideInRight;
+  top: 100px;
+}
+.myslides {
+  padding-top: 200px;
+}
+.myslides .p_detail {
+  padding-left: 50px;
+  width: 400px;
+  position: absolute;
+  top: 170px;
+  right: 100px;
+  z-index: 30;
+}
+.myslides .p_detail h3 {
+  font-size: 60px;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 175px;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+  color: #17171d;
+}
+.myslides .p_detail h3 i {
+  font-size: 18px;
+  color: #17171d;
+  margin-right: 12px;
+}
+.myslides .p_detail h3 i.rate {
+  color: #fff6af;
+}
+.myslides .p_detail h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}
+.myslides .p_detail p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: slideInRight;
+}
+.myslides .p_detail ul li {
+  color: #17171d;
+}
+.myslides .p_detail ul i {
+  color: #17171d;
+}
+.myslides .p_detail select {
+  display: inline-block;
+  color: #ffe600;
+  border: 1px solid #ffe600;
+  background: #17171d;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+  padding: 10px;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}
+.myslides .p_detail a {
+  font-size: 14px;
+  color: #17171d;
+  padding: 10px 20px;
+  display: inline-block;
+  border: 2px solid #17171d;
+  margin-right: 15px;
+  transition: 0.5s background-color;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+  text-decoration: none;
+}
+.myslides .p_detail a:hover {
+  background-color: #17171d;
+  color: #ffe600;
+  border: 2px solid #ffe600;
+}
+.myslides .p_detail span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-name: slideInRight;
+}
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+.fadeInUp {
+  animation-name: fadeInLeft;
+}
+.slideInRight {
+  animation-name: slideInRight;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+/**********************************SHOPPING-MAIN-CARDS**************************************/
+.shopping-main-cards {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(/IMAGES/yellowbg21.jpg);
+}
+.shopping-main-cards .container-fluid {
+  position: relative;
+  padding-left: 70px;
+}
+.shopping-main-cards .row {
+  margin: 0;
+  padding-top: 50px;
+}
+.shopping-main-cards .container-fluid .card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  background: #17171d;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.shopping-main-cards .container-fluid .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffe600;
+  clip-path: circle(150px at 80%20%);
+  transition: 0.5s ease-in-out;
+}
+.shopping-main-cards .container-fluid .card:hover:before {
+  clip-path: circle(300px at 80% -20%);
+}
+.shopping-main-cards .container .card:after {
+  content: "PUMA";
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04);
+}
+.shopping-main-cards .container-fluid .card .imgbx {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+.shopping-main-cards .container-fluid .card:hover .imgbx {
+  top: 0%;
+  transform: translateY(0%);
+}
+.shopping-main-cards .container-fluid .card .imgbx img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+}
+.shopping-main-cards .container-fluid .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+.shopping-main-cards .container-fluid .card:hover .contentBx {
+  height: 210px;
+}
+.contentBx h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffe600;
+}
+.contentBx .size,
+.contentBx .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.shopping-main-cards .container-fluid .card:hover .contentBx .size {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+.shopping-main-cards .container-fluid .card:hover .contentBx .color {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+.contentBx .size h3,
+.contentBx .color h3 {
+  color: #ffe600;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+.contentBx .size span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #111;
+  background: #ffe600;
+  margin: 0 5px;
+  transition: 0.5s;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contentBx .size span:hover {
+  color: #ffe600;
+  background: #17171d;
+}
+.contentBx .color span {
+  width: 20px;
+  height: 20px;
+  background: #ffe600;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.contentBx .color span:nth-child(2) {
+  background: #ffe600;
+}
+.contentBx .color span:nth-child(3) {
+  background: #111;
+}
+.contentBx .color span:nth-child(4) {
+  background: #fff;
+}
+.contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ffe600;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #17171d;
+  opacity: 0;
+  transform: translate(50px);
+  transition: 0.5s;
+}
+.shopping-main-cards .container-fluid .card:hover .contentBx a {
+  opacity: 1;
+  transform: translate(0px);
+  transition-delay: 0.75s;
+}
+
+/*************************************PAYMENT***********************************************/
+.shoppay {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  height: 100vh;
+  background: linear-gradient(-70deg, #ffe600 50%, #000000 50%);
+}
+.shoppay .headname,
+.shoppay legend.headname {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0.5em 0;
+}
+.shoppay .bio,
+.shoppay .payment {
+  max-width: 320px;
+  margin-top: 20vh;
+}
+.shoppay .bio .pay-image {
+  max-width: 7em;
+  border-radius: 50%;
+}
